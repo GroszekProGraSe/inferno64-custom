@@ -272,10 +272,15 @@ main(int argc, char *argv[])
 }
 
 	/* Włamanie do rdzenia: Nadpisujemy systemowe free, 
- 	żeby glibc nie ubijał nas za "invalid size" */
+ 	żeby glibc nie ubijał nas za "invalid size" 
 void free(void *ptr) {
     // Celowo puste. Inferno ma własny mechanizm poolfree, 
     // a wycieki przy zamykaniu emu nas nie obchodzą.
+}*/
+
+// Zmieniam nazwę na unikalną
+void free_nothing(void *ptr) {
+    // Puste
 }
 
 
