@@ -9,12 +9,12 @@ FPinit(void)
 	setfcr(FPPDBL|FPRNR|FPINVAL|FPZDIV|FPUNFL|FPOVFL);
 }
 
-FPsave(void* envp)
+void FPsave(void* envp)
 {
 	fegetenv((fenv_t*) envp);
 }
 
-FPrestore(void* envp)
+void FPrestore(void* envp)
 {
 	fesetenv((fenv_t*) envp);
 }

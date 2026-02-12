@@ -1,3 +1,5 @@
+#include <sys/stat.h>
+#include <sys/types.h>
 #include "lib9.h"
 #include <sys/types.h>
 #include <fcntl.h>

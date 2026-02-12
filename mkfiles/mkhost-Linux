@@ -10,3 +10,4 @@ DATA2S=		data2s
 NDATE=		ndate
 KSIZE=		ksize
 AWK=		awk
+CFLAGS=-c -I$ROOT/Linux/$objtype/include -I$ROOT/include -Wno-int-to-pointer-cast -Wno-pointer-to-int-cast -Wno-implicit-function-declaration -Wno-implicit-int -Wno-return-mismatch -Wno-incompatible-pointer-types -Wno-error=incompatible-pointer-types -Wno-error=implicit-function-declaration -D_GNU_SOURCE

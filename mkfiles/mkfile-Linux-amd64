@@ -1,3 +1,5 @@
+#define _GNU_SOURCE
+
 TARGMODEL=	Posix
 TARGSHTYPE=	sh
 CPUS=		386
@@ -11,19 +13,21 @@ ARFLAGS=	ruvs
 AS=		cc -c 
 ASFLAGS=
 
-CC=		cc -c 
-CFLAGS=		-g\
-		#-O\
-		-fno-strict-aliasing\
-		-fno-aggressive-loop-optimizations\
-		-Wuninitialized -Wunused-variable -Wreturn-type -Wimplicit\
-		-I$ROOT/Linux/amd64/include\
-		-I$ROOT/include\
-		-DLINUX_AMD64
+CC=        cc -c 
+CFLAGS=    -g\
+           -fno-strict-aliasing\
+           -fno-aggressive-loop-optimizations\
+           -Wno-incompatible-pointer-types\
+           -Wno-int-to-pointer-cast\
+           -Wno-pointer-to-int-cast\
+           -D_GNU_SOURCE\
+           -I$ROOT/Linux/amd64/include\
+           -I$ROOT/include\
+           -DLINUX_AMD64
 
-ANSICPP=
-LD=		cc 
-LDFLAGS=
+LD=        cc 
+# Dodajemy muldefs, żeby linker nie pluł się, gdy podmienimy free w kodzie
+LDFLAGS=   -Wl,--allow-multiple-definition -z norelro
 
 SYSLIBS= -lm
 
