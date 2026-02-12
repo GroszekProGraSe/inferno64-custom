@@ -20,6 +20,7 @@ CFLAGS=    -g\
            -Wno-incompatible-pointer-types\
            -Wno-int-to-pointer-cast\
            -Wno-pointer-to-int-cast\
+           -Wno-implicit-function-declaration\
            -D_GNU_SOURCE\
            -I$ROOT/Linux/amd64/include\
            -I$ROOT/include\
@@ -27,6 +28,7 @@ CFLAGS=    -g\
 
 LD=        cc 
 # Dodajemy muldefs, żeby linker nie pluł się, gdy podmienimy free w kodzie
+# żeby w razie czego "wstrzyknąć" własne free/malloc bez błędów linkera
 LDFLAGS=   -Wl,--allow-multiple-definition -z norelro
 
 SYSLIBS= -lm
