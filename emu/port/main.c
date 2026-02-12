@@ -271,12 +271,14 @@ main(int argc, char *argv[])
 	libinit(imod);
 }
 
-/* Włamanie do rdzenia: Nadpisujemy systemowe free, 
-   żeby glibc nie ubijał nas za "invalid size" */
+	/* Włamanie do rdzenia: Nadpisujemy systemowe free, 
+ 	żeby glibc nie ubijał nas za "invalid size" */
 void free(void *ptr) {
     // Celowo puste. Inferno ma własny mechanizm poolfree, 
     // a wycieki przy zamykaniu emu nas nie obchodzą.
 }
+
+
 
 void
 emuinit(void *imod)

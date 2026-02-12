@@ -455,6 +455,7 @@ poolalloc(Pool *p, uintptr asize)
 void
 poolfree(Pool *p, void *v)
 {
+	if(v == nil) return; // ... wlamanie do rdzenia blad free()
 	Bhdr *b, *c;
 	extern Bhdr *ptr;
 
