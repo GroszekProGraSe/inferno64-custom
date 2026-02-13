@@ -26,8 +26,11 @@ $ mk install
 ```
 That will bind all the binaries for mk, iyacc, limbo, and emu in Linux/amd64/bin and also build all the dis object code. Inferno can then be launched by just typing `emu`.
 
+Arch, cachyos version, and gcc 15 + in system..
+
 ```
 $ emu
 ; wm/wm&
 ```
+
 
